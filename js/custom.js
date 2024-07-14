@@ -176,32 +176,35 @@
 	}
 	//end
 	
-	const countDown = new Date(birthday).getTime(),
-		x = setInterval(function() {    
+	const countDown = new Date(birthday).getTime();
+		let x = setInterval(function() {    
   
 		  const now = new Date().getTime(),
 				distance = countDown - now;
   
-		  document.getElementById("d").innerText = Math.floor(distance / (day)),
-			document.getElementById("hr").innerText = Math.floor((distance % (day)) / (hour)),
-			document.getElementById("min").innerText = Math.floor((distance % (hour)) / (minute)),
-			document.getElementById("sec").innerText = Math.floor((distance % (minute)) / second);
-  
-		  //do something later when date is reached
-		  console.log("countdown  - ", Math.floor((distance % (minute)) / second))
-		  if (Math.floor((distance % (minute)) / second) <= 0) {
+			let up_d = Math.floor(distance / (day));
+			let up_hr = Math.floor((distance % (day)) / (hour));
+			let up_min = Math.floor((distance % (hour)) / (minute));
+			let up_sec =  Math.floor((distance % (minute)) / second);	
+
+		  document.getElementById("d").innerText = up_d,
+			document.getElementById("hr").innerText = up_hr,
+			document.getElementById("min").innerText = up_min,
+			document.getElementById("sec").innerText = up_sec;
+
+		  if (distance < 1000) {
 			clearInterval(x);
 			document.getElementById("ttt1").innerText = "It's your birthday!";
 			document.getElementById("tt2").style.display = "block";
   
-	document.getElementById("days").innerText = 0,
+			document.getElementById("days").innerText = 0,
 			document.getElementById("hours").innerText = 0,
 			document.getElementById("minutes").innerText = 0,
 			document.getElementById("seconds").innerText =0;
 			document.getElementById("content").style.display = "block";
 		  }
 		  //seconds
-		}, 0)
+		}, 1000)
 	}());
 
 	
