@@ -156,56 +156,56 @@
 //       }, 0)
 //   }());
 
-  (function () {
-	const second = 1000,
-		  minute = second * 60,
-		  hour = minute * 60,
-		  day = hour * 24;
+//   (function () {
+// 	const second = 1000,
+// 		  minute = second * 60,
+// 		  hour = minute * 60,
+// 		  day = hour * 24;
   
-	let today = new Date(),
-		dd = String(today.getDate()).padStart(2, "0"),
-		mm = String(today.getMonth() + 1).padStart(2, "0"),
-		yyyy = today.getFullYear(),
-		nextYear = yyyy + 1,
-		dayMonth = "07/15/",
-		birthday = dayMonth + yyyy;
+// 	let today = new Date(),
+// 		dd = String(today.getDate()).padStart(2, "0"),
+// 		mm = String(today.getMonth() + 1).padStart(2, "0"),
+// 		yyyy = today.getFullYear(),
+// 		nextYear = yyyy + 1,
+// 		dayMonth = "07/15/",
+// 		birthday = dayMonth + yyyy;
 	
-	today = mm + "/" + dd + "/" + yyyy;
-	if (today > birthday) {
-	  birthday = dayMonth + nextYear;
-	}
-	//end
+// 	today = mm + "/" + dd + "/" + yyyy;
+// 	if (today > birthday) {
+// 	  birthday = dayMonth + nextYear;
+// 	}
+// 	//end
 	
-	const countDown = new Date(birthday).getTime();
-		let x = setInterval(function() {    
+// 	const countDown = new Date(birthday).getTime();
+// 		let x = setInterval(function() {    
   
-		  const now = new Date().getTime(),
-				distance = countDown - now;
+// 		  const now = new Date().getTime(),
+// 				distance = countDown - now;
   
-			let up_d = Math.floor(distance / (day));
-			let up_hr = Math.floor((distance % (day)) / (hour));
-			let up_min = Math.floor((distance % (hour)) / (minute));
-			let up_sec =  Math.floor((distance % (minute)) / second);	
+// 			let up_d = Math.floor(distance / (day));
+// 			let up_hr = Math.floor((distance % (day)) / (hour));
+// 			let up_min = Math.floor((distance % (hour)) / (minute));
+// 			let up_sec =  Math.floor((distance % (minute)) / second);	
 
-		  document.getElementById("d").innerText = up_d,
-			document.getElementById("hr").innerText = up_hr,
-			document.getElementById("min").innerText = up_min,
-			document.getElementById("sec").innerText = up_sec;
+// 		  document.getElementById("d").innerText = up_d,
+// 			document.getElementById("hr").innerText = up_hr,
+// 			document.getElementById("min").innerText = up_min,
+// 			document.getElementById("sec").innerText = up_sec;
 
-		  if (distance < 1000) {
-			clearInterval(x);
-			document.getElementById("ttt1").innerText = "It's your birthday!";
-			document.getElementById("tt2").style.display = "block";
+// 		  if (distance < 1000) {
+// 			clearInterval(x);
+// 			document.getElementById("ttt1").innerText = "It's your birthday!";
+// 			document.getElementById("tt2").style.display = "block";
   
-			document.getElementById("days").innerText = 0,
-			document.getElementById("hours").innerText = 0,
-			document.getElementById("minutes").innerText = 0,
-			document.getElementById("seconds").innerText =0;
-			document.getElementById("content").style.display = "block";
-		  }
-		  //seconds
-		}, 1000)
-	}());
+// 			document.getElementById("days").innerText = 0,
+// 			document.getElementById("hours").innerText = 0,
+// 			document.getElementById("minutes").innerText = 0,
+// 			document.getElementById("seconds").innerText =0;
+// 			document.getElementById("content").style.display = "block";
+// 		  }
+// 		  //seconds
+// 		}, 1000)
+// 	}());
 
 	
 }(jQuery));
